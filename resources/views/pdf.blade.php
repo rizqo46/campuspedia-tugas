@@ -10,7 +10,7 @@
 
     <br><br>{{$experience}}<br><br>
 
-    Bersama dengan email ini terlampir CV saya. Bila ada pertanyaan lebih lanjut dapat menghubungi kontak dibawah. Terima kasih atas perhatiannya.</p>
+    Bila ada pertanyaan lebih lanjut dapat menghubungi kontak dibawah. Terima kasih atas perhatiannya.</p>
 
     Hormat saya,
 
