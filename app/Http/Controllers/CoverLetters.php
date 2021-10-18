@@ -42,6 +42,9 @@ class CoverLetters extends Controller
     }
     public function preview($uuid) {
         $post = CoverLettersModel::where('uuid', '=', $uuid)->first();
+        if ($post == null) {
+            return  view('home', ['message'=>'ID yang anda masukkan tidak terdaftar atau sudah terhapus. Silahkan buat baru']);
+        }
         return  view('preview', [
             'uuid'=>$uuid,
             'name' => $post ->name, 
@@ -53,6 +56,9 @@ class CoverLetters extends Controller
     }
     public function edit($uuid) {
         $post = CoverLettersModel::where('uuid', '=', $uuid)->first();
+        if ($post == null) {
+            return  view('home', ['message'=>'ID yang anda masukkan tidak terdaftar atau sudah terhapus. Silahkan buat baru']);
+        }
         return view('form', ['title'=>'Edit surat lamaran anda', 'to'=>'/edit/'.$post->uuid,
         'name' => $post ->name, 
         'email' => $post ->email, 
@@ -76,6 +82,9 @@ class CoverLetters extends Controller
         // $pegawai->delete();
         // return redirect('/pegawai');
         $post = CoverLettersModel::where('uuid', '=', $uuid)->first();
+        if ($post == null) {
+            return  view('home', ['message'=>'ID yang anda masukkan tidak terdaftar atau sudah terhapus. Silahkan buat baru']);
+        }
         $post->delete();
         return  view('home', ['message'=>'Surat lamaran anda berhasil dihapus']);
     }
